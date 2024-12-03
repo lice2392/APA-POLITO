@@ -1,0 +1,8 @@
+CL1 0
+CL2 0
+CL3 2
+CL4 3
+CL5 0
+CL6 1
+CL7 2
+CL8 3

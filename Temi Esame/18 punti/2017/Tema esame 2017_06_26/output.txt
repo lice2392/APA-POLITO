@@ -1,0 +1,10 @@
+---BEST SOLUTION---
+Funzione massima: 1.21
+Cliente: CL1 (0 4) - Albergo: 1
+Cliente: CL2 (1 3) - Albergo: 0
+Cliente: CL3 (2 2) - Albergo: 2
+Cliente: CL4 (3 1) - Albergo: 2
+Cliente: CL5 (0 4) - Albergo: 3
+Cliente: CL6 (1 3) - Albergo: 2
+Cliente: CL7 (2 2) - Albergo: 3
+Cliente: CL8 (3 1) - Albergo: 3
