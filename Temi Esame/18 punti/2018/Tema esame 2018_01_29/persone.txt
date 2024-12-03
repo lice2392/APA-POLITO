@@ -1,0 +1,8 @@
+Alice
+Amazon.com Leonardo Google Meta
+Lisa
+Meta Google Leonardo Amazon.com
+Laura
+Amazon.com Meta Google Leonardo
+Elena 
+Leonardo Google Meta Amazon.com
