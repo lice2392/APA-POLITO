@@ -1,0 +1,6 @@
+5
+NORD 2 1 0 1 2
+OVEST 1 1 1
+NORD 2 2 1 2 2
+EST 1 2 0
+EST 1 2 0
