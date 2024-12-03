@@ -1,0 +1,83 @@
+Torino Bologna
+#
+Torino Milano
+#
+Torino Milano Bologna
+#
+Torino Milano Roma
+#
+Torino Milano Roma Genova
+#
+Torino Milano Roma Genova Milano
+#
+Torino Milano Roma Genova Milano Bologna
+#
+Torino Milano Roma Genova Venezia
+#
+Torino Milano Roma Genova Venezia Bologna
+#
+Milano Bologna
+#
+Milano Roma
+#
+Milano Roma Genova
+#
+Milano Roma Genova Milano
+#
+Milano Roma Genova Milano Bologna
+#
+Milano Roma Genova Venezia
+#
+Milano Roma Genova Venezia Bologna
+#
+Roma Genova
+#
+Roma Genova Milano
+#
+Roma Genova Milano Bologna
+#
+Roma Genova Milano Roma
+#
+Roma Genova Venezia
+#
+Roma Genova Venezia Bologna
+#
+Genova Milano
+#
+Genova Milano Bologna
+#
+Genova Milano Roma
+#
+Genova Milano Roma Genova
+#
+Genova Milano Roma Genova Venezia
+#
+Genova Milano Roma Genova Venezia Bologna
+#
+Genova Venezia
+#
+Genova Venezia Bologna
+#
+Venezia Bologna
+#
+Firenze Genova
+#
+Firenze Genova Milano
+#
+Firenze Genova Milano Bologna
+#
+Firenze Genova Milano Roma
+#
+Firenze Genova Milano Roma Genova
+#
+Firenze Genova Milano Roma Genova Venezia
+#
+Firenze Genova Milano Roma Genova Venezia Bologna
+#
+Firenze Genova Venezia
+#
+Firenze Genova Venezia Bologna
+#
+Firenze Venezia
+#
+Firenze Venezia Bologna

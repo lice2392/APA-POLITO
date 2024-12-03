@@ -1,0 +1,18 @@
+7
+Torino
+Bologna
+Milano
+Roma
+Genova
+Venezia
+Firenze
+Torino Bologna 331
+Torino Milano 140
+Milano Bologna 213
+Milano Roma 573
+Roma Genova 489
+Genova Milano 142
+Genova Venezia 394
+Venezia Bologna 155
+Firenze Genova 249
+Firenze Venezia 269

@@ -1,0 +1,16 @@
+6
+Alice
+Barbara
+Chiara
+Davide
+Enrico
+Francesco
+Alice Barbara 12
+Alice Enrico 87
+Barbara Chiara 11
+Chiara Enrico 43
+Chiara Francesco 35
+Davide Alice 19
+Enrico Davide 10
+Enrico Francesco 17
+Enrico Barbara 23
