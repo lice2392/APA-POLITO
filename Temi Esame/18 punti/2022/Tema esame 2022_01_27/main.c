@@ -37,14 +37,14 @@ int main()
         printf("Soluzione non valida.\n\n\n");
     }
 
-    GRIGLIAreset(&g);
+    GRIGLIAreset(g);
 
     printf("---PROBLEMA DI RICERCA:---\n");
     COPERTURAsolve(g);
 
     fclose(f);
     fclose(f1);
-    GRIGLIAclear(g);
-    COPERTURAclear(proposta);
+    GRIGLIAfree(g);
+    COPERTURAfree(proposta);
     return 0;
 }
