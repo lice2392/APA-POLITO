@@ -2,7 +2,7 @@
 #define PERCORSO_H_INCLUDED
 #include "griglia.h"
 
-typedef enum{N, S, E, O}Direzione;
+typedef enum{N, S, E, O, NONE}Direzione;
 typedef enum{VERO, FALSO}Boolean;
 
 typedef struct{

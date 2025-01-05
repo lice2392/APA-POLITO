@@ -14,6 +14,8 @@ typedef struct{
 Griglia GRIGLIAinit(int nr, int nc);
 Griglia GRIGLIAread(FILE *f);
 int GRIGLIAareaBianchi(Griglia g);
+void GRIGLIAreset(Griglia *g);
+void GRIGLIAprint(Griglia g, FILE *f);
 void GRIGLIAclear(Griglia g);
 
 #endif // GRIGLIA_H_INCLUDED

@@ -33,7 +33,9 @@ int main()
         printf("Soluzione non valida.\n\n\n");
     }
 
-    printf("---PROBLEMA DI VERIFICA:---\n");
+    GRIGLIAreset(&g);
+
+    printf("---PROBLEMA DI RICERCA E OTTIMIZZAZIONE:---\n");
     PERCORSOsolve(g);
 
     fclose(f);

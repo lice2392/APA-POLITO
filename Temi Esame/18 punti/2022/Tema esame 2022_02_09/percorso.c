@@ -59,10 +59,13 @@ Boolean PERCORSOcheck(Percorso p, Griglia g, int *cambi, int AreaBianchi){
     for(i=1; i<p.dim; i++){
        if(p.mosse[i].riga<0 || p.mosse[i].riga>=g.nr || p.mosse[i].colonna<0 || p.mosse[i].colonna>=g.nc)
           return FALSO;
-       if(g.griglia[p.mosse[i].riga][p.mosse[i].colonna]==NERO)
+       if(g.griglia[p.mosse[i].riga][p.mosse[i].colonna]!=BIANCO)
          return FALSO;
        if(p.mosse[i].riga!=p.mosse[i-1].riga && p.mosse[i].colonna!=p.mosse[i-1].colonna)
           return FALSO;
+       if(abs(p.mosse[i].riga-p.mosse[i-1].riga)>1 && abs(p.mosse[i].colonna-p.mosse[i-1].colonna)>1)
+            return FALSO;
+       g.griglia[p.mosse[i].riga][p.mosse[i].colonna]=OCCUPATO;
        if(p.mosse[i].riga==p.mosse[i-1].riga+1)
           dirAttuale=S;
        else if(p.mosse[i].riga==p.mosse[i-1].riga-1)
@@ -100,36 +103,52 @@ void PERCORSOdelete(Percorso *p){
 }
 
 
-static void solveR(Griglia *g, Percorso *sol, Percorso *bestSol, int *min, int riga, int colonna, int areaBianchi, Boolean *trovato){
-    int cambi, i;
+static void solveR(Griglia *g, Percorso *sol, Percorso *bestSol, int *min, int riga, int colonna, int areaBianchi, Boolean *trovato, Direzione dir, int nCambi, int nCelleVisitate){
+    int i;
     Boolean exit=VERO;
 
     g->griglia[riga][colonna]=OCCUPATO;
     PERCORSOinsert(sol, MOSSAcreate(riga, colonna));
 
     if(riga+1>=0 && riga+1<g->nr && g->griglia[riga+1][colonna]==BIANCO){
-       solveR(g, sol, bestSol, min, riga+1, colonna, areaBianchi, trovato);
+       if(dir!=S && dir!=NONE)
+         nCambi++;
+       solveR(g, sol, bestSol, min, riga+1, colonna, areaBianchi, trovato, S, nCambi, nCelleVisitate+1);
+       if(dir!=S && dir!=NONE)
+         nCambi--;
        exit=FALSO;
     }
 
     if(riga-1>=0 && riga-1<g->nr && g->griglia[riga-1][colonna]==BIANCO){
-       solveR(g, sol, bestSol, min, riga-1, colonna, areaBianchi, trovato);
+       if(dir!=N && dir!=NONE)
+         nCambi++;
+       solveR(g, sol, bestSol, min, riga-1, colonna, areaBianchi, trovato, N, nCambi, nCelleVisitate+1);
+       if(dir!=N && dir!=NONE)
+         nCambi--;
        exit=FALSO;
     }
 
     if(colonna+1>=0 && colonna+1<g->nc && g->griglia[riga][colonna+1]==BIANCO){
-       solveR(g, sol, bestSol, min, riga, colonna+1, areaBianchi, trovato);
+       if(dir!=E && dir!=NONE)
+         nCambi++;
+       solveR(g, sol, bestSol, min, riga, colonna+1, areaBianchi, trovato, E, nCambi, nCelleVisitate+1);
+       if(dir!=E && dir!=NONE)
+         nCambi--;
        exit=FALSO;
     }
 
     if(colonna-1>=0 && colonna-1<g->nc && g->griglia[riga][colonna-1]==BIANCO){
-       solveR(g, sol, bestSol, min, riga, colonna-1, areaBianchi, trovato);
+       if(dir!=O && dir!=NONE)
+         nCambi++;
+       solveR(g, sol, bestSol, min, riga, colonna-1, areaBianchi, trovato, O, nCambi, nCelleVisitate+1);
+       if(dir!=O && dir!=NONE)
+         nCambi--;
        exit=FALSO;
     }
     if(exit==VERO){
-       if(PERCORSOcheck(*sol, *g, &cambi, areaBianchi)==VERO && cambi < (*min)){
+       if(nCelleVisitate==areaBianchi && nCambi < (*min)){
           (*trovato)=VERO;
-          (*min)=cambi;
+          (*min)=nCambi;
           bestSol->dim=sol->dim;
           for(i=0; i<sol->dim; i++){
              bestSol->mosse[i]=sol->mosse[i];
@@ -151,7 +170,7 @@ void PERCORSOsolve(Griglia g){
    sol=PERCORSOinit(g.nr*g.nc);
    bestSol=PERCORSOinit(g.nr*g.nc);
 
-   solveR(&g, &sol, &bestSol, &min, 0, 0, GRIGLIAareaBianchi(g), &trovato);
+   solveR(&g, &sol, &bestSol, &min, 0, 0, GRIGLIAareaBianchi(g), &trovato, NONE, 0, 1);
 
    if(trovato==VERO){
        printf("La soluzione ottima prevede %d cambi di direzione.\n\n", min);

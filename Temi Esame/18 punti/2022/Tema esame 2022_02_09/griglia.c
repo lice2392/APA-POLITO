@@ -59,6 +59,28 @@ int GRIGLIAareaBianchi(Griglia g){
 }
 
 
+void GRIGLIAreset(Griglia *g){
+    int i, j;
+    for(i=0; i<g->nr; i++)
+        for(j=0; j<g->nc; j++)
+            if(g->griglia[i][j]!=NERO)
+                g->griglia[i][j]=BIANCO;
+    return;
+}
+
+
+void GRIGLIAprint(Griglia g, FILE *f){
+    int i, j;
+    for(i=0; i<g.nr; i++){
+        for(j=0; j<g.nc; j++){
+            fprintf(f, "%d ", g.griglia[i][j]);
+        }
+        fprintf(f, "\n");
+    }
+    return;
+}
+
+
 void GRIGLIAclear(Griglia g){
     free2D(g.griglia, g.nr);
     return;
