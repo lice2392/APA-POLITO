@@ -78,7 +78,7 @@ char *cercaRegexp(char *src, char *regexp){
                REGEXP). */
             iR++;
         }
-        /* Se il carattere attuale REGEXP[IR] e' alfabetico ed non e' uguale al carattere
+        /* Se il carattere attuale REGEXP[IR] e' alfabetico e non e' uguale al carattere
            SRC[IS]: */
         else if(isalpha(regexp[iR]) && src[iS]!=regexp[iR]){
             /* Se avevo trovato una corrispondenza: */
