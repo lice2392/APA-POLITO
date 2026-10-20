@@ -345,7 +345,7 @@ int dateCompare(Data d1, Data d2){
     if(d1.aa!=d2.aa)
         return d1.aa-d2.aa;
     if(d1.mm!=d2.mm)
-        return d1.aa-d2.aa;
+        return d1.mm-d2.mm;
     return d1.gg-d2.gg;
 }
 
