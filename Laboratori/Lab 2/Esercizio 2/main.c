@@ -283,7 +283,10 @@ void stringToMinuscola(char str[]){
 
 /* Funzione che verifica la correttezza della data. */
 bool isDataCorretta(Data d){
-
+    /* Check sull'anno. */
+    if(d.aa<0)
+        return false;
+    
     /* Check sul mese. */
     if(d.mm<1 || d.mm>12)
         return false;
